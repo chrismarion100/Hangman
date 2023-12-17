@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&family=Roboto+Mono&family=VT323&display=swap');
+  </style>
+</head>
+<body style="background-color: #ADD8E6;">
+  <h1>Welcome to Hangman!</h1>
+  <br>
+  <h2>The theme is: Never Gonna Give You Up Lyrics.</h2>
+  <br>
+  <div class="word-display">
+      <p id="wordToGuess"></p>
+  </div>
+  <div class="input-area">
+      <input type="text" id="guessInput" placeholder="Enter a letter">
+      <button id="guessButton">Guess</button>
+
+  </div>
+  <div class="game-status">
+      <p id="guessesLeft"></p>
+      <p id="gameMessage"></p>
+      <p id="incorrectLetters"></p>
+      <button id="restartButton" style="display: none;">Restart</button>
+      <div id="youtubeVideo"></div>
+  </div>
+  <div id="hangmanFigure">
+    <img id="hangmanImg" src="images/default.png" alt="Hangman" />
+</div>
+  <script src="js/script.js"></script>
+</body>
+</html>
