@@ -15,23 +15,34 @@
   <h2>The theme is: Never Gonna Give You Up Lyrics.</h2>
   <br>
   <div class="word-display">
-      <p id="wordToGuess"></p>
+    <p id="wordToGuess"></p>
   </div>
   <div class="input-area">
-      <input type="text" id="guessInput" placeholder="Enter a letter">
-      <button id="guessButton">Guess</button>
-
+    <input type="text" id="guessInput" placeholder="Enter a letter">
+    <button id="guessButton">Guess</button>
   </div>
   <div class="game-status">
-      <p id="guessesLeft"></p>
-      <p id="gameMessage"></p>
-      <p id="incorrectLetters"></p>
-      <button id="restartButton" style="display: none;">Restart</button>
-      <div id="youtubeVideo"></div>
+    <p id="guessesLeft"></p>
+    <p id="gameMessage"></p>
+    <p id="incorrectLetters"></p>
+    <button id="restartButton" style="display: none;">Restart</button>
+    <div class="container">
+      <div class="left-column">
+        <div id="hangmanFigure">
+          <img id="hangmanImg" src="images/default.png" alt="Hangman" />
+        </div>
+      </div>
+      <div class="right-column">
+        <div id="youtubeVideo"></div>
+      </div>
+    </div>
   </div>
-  <div id="hangmanFigure">
-    <img id="hangmanImg" src="images/default.png" alt="Hangman" />
-</div>
+  <footer class="footer">
+    <p>Made by: Chris Marion</p><br>
+    <p>Follow me on social media</p><br>
+    <a href="https://www.instagram.com/chrisssmarion/"><img src="/images/instagramIcon.png" alt="Instagram Logo"></a>
+    <a href="https://www.tiktok.com/@chrisssmarion"><img src="/images/tikTokIcon.png" alt="TikTok Logo"></a>
+  </footer>
   <script src="js/script.js"></script>
 </body>
 </html>
