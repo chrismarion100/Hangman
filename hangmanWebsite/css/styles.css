@@ -14,7 +14,7 @@ body {
   font-family: 'Press Start 2P', VT323, 'Roboto Mono', Orbitron, monospace;
 }
 
-h1, h2 {
+h1, h2, p {
   text-align: center;
   margin-bottom: 20px;
   color: #1A1A1A;
@@ -66,12 +66,61 @@ h1, h2 {
   margin: 0 auto;
 }
 
-#hangmanFigure {
-  margin-top: 20px;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
 }
 
-#hangmanImg {
-  max-width: 30%;
+.left-column {
+  flex: 0 0 35%; 
+}
+
+.right-column {
+  flex: 0 0 60%; 
+}
+
+#hangmanFigure img {
+  max-width: 100%;
   height: auto;
 }
 
+.right-column {
+  font-size: 18px; 
+}
+
+.right-column p {
+  font-size: 24px; 
+}
+
+.right-column .video-container {
+  position: relative;
+  width: 100%;
+  max-width: 90%; 
+  margin: 0 auto;
+}
+
+.footer img {
+  width: 100px; 
+  height: auto;
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px; 
+  
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  margin: 5px 0; 
+}
+
+.footer a {
+  display: inline-block; 
+  margin: 0 10px; 
+  text-align: center;
+  margin-top: 10px; 
+}
