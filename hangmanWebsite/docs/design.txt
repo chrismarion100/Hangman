@@ -1,0 +1,143 @@
+Problem Statement:
+"The Hangman game aims to provide an interactive experience where players guess
+ letters to uncover a hidden word within a limited number of attempts. The 
+ program must manage the game flow, track guesses, display the current state of
+  the word, and determine win or loss conditions."
+
+Nouns and Verbs:
+Nouns:
+Word, Guesses, Attempts, Letters, Game State
+Verbs:
+Guess, Track, Display, Determine, Manage
+
+Defing Diargram
+INPUT:
+  secretWord
+  guessedLetter
+
+PROCESSING:
+  secretWord = GenerateSecretWord
+  guessedLetters = ()
+  attempts = 6
+  DisplayInitialState(secretWord) 
+  
+  WHILE attempts > 0
+    guessedLetter = PromptForGuessedLetter()
+    IF guessedLetter is in secretWord
+      UpdateGuessedLetters(guessedLetter, secretWord)
+    ELSE
+      DecrementAttempts()
+    
+    DisplayHangmanState(guessedLetters, secretWord)
+    
+    IF secretWord is fully guessed
+      Display "You win!"
+      END
+      
+  END WHILE
+
+  IF attempts = 0
+    Display "Sorry, You lost! The word was [secretWord]"
+    END
+
+
+SOLUTION ALGORITHM:
+INPUT:
+  secretWord
+  guessedLetter
+
+PROCESSING:
+  secretWord = GenerateSecretWord
+  guessedLetters = ()
+  attempts = 6
+  
+  WHILE attempts > 0 AND secretWord is not fully guessed
+    Prompt for userInput with "Guess a letter"
+    
+    WHILE userInput has more than one character OR userInput is in guessedLetters
+      IF userInput has more than one character THEN
+        Display "Please enter only one letter."
+      ELSE IF userInput is in guessedLetters THEN
+        Display "You've already guessed that letter."
+
+      Prompt for userInput with "Guess a letter"
+    Add userInput to guessedLetters
+    
+    IF userInput is in secretWord THEN
+      UpdateGuessedLetters(userInput, secretWord)
+    ELSE
+      DecrementAttempts
+    
+    IF secretWord is fully guessed THEN
+      Display "You won!"
+    ELSE IF attempts = 0 THEN
+      Display "Sorry, you lost! The word was (secretWord)."
+  END WHILE
+
+OUTPUT:
+  Game outcome (win/lose)
+  secretWord (if lost)
+
+**I have changed EXPECTED results to include 
+guessed letters and incorrect guesses**
+
+VARIABLES:
+  secretWord, guessedLetters
+
+TEST CASE 1:
+  INPUT VALUES:
+    e a r d
+  YOUR EXPECTED RESULT:
+    D E E R
+    You won!
+    Incorrect guesses: 
+  YOUR ACTUAL RESULT:
+    D E E R
+    You won!
+    Incorrect guesses: 
+
+TEST CASE 2:
+  INPUT VALUES:
+    e b a r o v
+  YOUR EXPECTED RESULT:
+    B E A V E R
+    You won!
+    Incorrect guesses: O
+  YOUR ACTUAL RESULT:
+    B E A V E R
+    You won!
+    Incorrect guesses: O
+
+TEST CASE 3:
+  INPUT VALUES:
+    t d u k b r e i g q m
+  YOUR EXPECTED RESULT:
+    T U R K E _ _
+    Sorry, you lost. The word was: TURKEY.
+    Incorrect guesses: D, B, I, G, Q, M
+  YOUR ACTUAL RESULT:
+    T U R K E _ _
+    Sorry, you lost. The word was: TURKEY.
+    Incorrect guesses: D, B, I, G, Q, M
+
+TEST CASE 4:
+  INPUT VALUES:
+    a f o x 
+  YOUR EXPECTED RESULT:
+    F O X
+    You won!
+    Incorrect guesses: A
+  YOUR ACTUAL RESULT:
+    F O X
+    You won!
+    Incorrect guesses: A
+
+TEST CASE 5:
+  INPUT VALUES:
+    b e a u o n k y
+  YOUR EXPECTED RESULT:
+    Sorry, you lost! The word was Mink.
+  YOUR ACTUAL RESULT:
+    _ _ N Y
+    Sorry, you lost. The word was: MINK.
+    Incorrect guesses: B, E, A, U, O, Y

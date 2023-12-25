@@ -105,7 +105,6 @@ function hangman() {
             restartButton.style.display = "block";
             guessesLeft.style.display = "none";
     
-            // Check if YouTube video is already added before appending
             if (!youtubeDiv.querySelector("iframe")) {
                 const youtubeEmbed = document.createElement("iframe");
                 youtubeEmbed.width = "560";
@@ -116,6 +115,7 @@ function hangman() {
                 youtubeEmbed.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
                 youtubeEmbed.allowFullscreen = true;
     
+                youtubeDiv.innerHTML = "<p>Learn the lyrics by watching the video below</p>"; // Text above the YouTube video
                 youtubeDiv.appendChild(youtubeEmbed);
             }
         } else {
@@ -123,8 +123,7 @@ function hangman() {
             gameMessage.innerHTML = "";
             youtubeDiv.innerHTML = ""; // Remove the YouTube video if displayed
         }
-    }
-    
+    }    
     
     function handleGuess() {
         let guessedLetter = document.getElementById("guessInput").value.toUpperCase();
