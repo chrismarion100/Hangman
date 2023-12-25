@@ -115,8 +115,12 @@ function hangman() {
                 youtubeEmbed.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
                 youtubeEmbed.allowFullscreen = true;
     
-                youtubeDiv.innerHTML = "<p>Learn the lyrics by watching the video below</p>"; // Text above the YouTube video
-                youtubeDiv.appendChild(youtubeEmbed);
+                let youtubeURL = "https:" + String.fromCharCode(47, 47) + "www.youtube.com/watch?v=dQw4w9WgXcQ";
+                youtubeDiv.innerHTML = "<p>Learn the lyrics by clicking on this link</p><br><a href='" + youtubeURL + "'>Link to the video</a>";
+
+                // youtubeDiv.innerHTML = "<p>Learn the lyrics by watching the video below</p>";
+                // youtubeDiv.appendChild(youtubeEmbed);
+            }
             }
         } else {
             restartButton.style.display = "none";
