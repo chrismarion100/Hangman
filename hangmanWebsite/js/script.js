@@ -54,6 +54,21 @@ function hangman() {
     let incorrectGuesses = [];
     let guesses = 6;
 
+  //Allows users to press enter and does the same thing as if user pressed Guess button
+    function handleEnter(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            handleGuess();
+        }
+    }
+    
+    function handleGuessButton() {
+        handleGuess();
+    }
+    
+    document.getElementById("guessButton").addEventListener("click", handleGuessButton);
+    document.getElementById("guessInput").addEventListener("keydown", handleEnter);
+    
     function displayWordState() {
         let display = '';
         for (let letter of secretWord) {
@@ -120,7 +135,6 @@ function hangman() {
 
                 // youtubeDiv.innerHTML = "<p>Learn the lyrics by watching the video below</p>";
                 // youtubeDiv.appendChild(youtubeEmbed);
-            }
             }
         } else {
             restartButton.style.display = "none";
